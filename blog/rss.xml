@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Iron Realms Nexus Package Manager Blog</title>
+        <link>https://keneanung.github.io/nexus-package-manager/blog</link>
+        <description>Iron Realms Nexus Package Manager Blog</description>
+        <lastBuildDate>Sun, 23 Oct 2022 21:01:07 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <copyright>Copyright © 2022 keneanung</copyright>
+        <item>
+            <title><![CDATA[v0.1.0: MVP]]></title>
+            <link>https://keneanung.github.io/nexus-package-manager/blog/2022_10_23_mvp</link>
+            <guid>/2022_10_23_mvp</guid>
+            <pubDate>Sun, 23 Oct 2022 21:01:07 GMT</pubDate>
+            <description><![CDATA[This is the very first release of the Nexus Package Manager. This MVP (Minimal Viable Product), which contains only a bare minimum of features. These include a basic UI, the retrieval of package data from a remote location as well as installation, update and removal of packages. All of this functionality is also provided by the Nexus UI, with the exception of a package listing. So right now it can be used as a way to discover new packages.]]></description>
+            <content:encoded><![CDATA[<p>This is the very first release of the Nexus Package Manager. This MVP (Minimal Viable Product), which contains only a bare minimum of features. These include a basic UI, the retrieval of package data from a remote location as well as installation, update and removal of packages. All of this functionality is also provided by the Nexus UI, with the exception of a package listing. So right now it can be used as a way to discover new packages.</p><p>Future plans include the tracking and installation of dependencies, version handling and notification of new updates for installed packages.</p><p>The success of this project is strongly linked with how extensive the <a href="https://keneanung.github.io/nexus-package-repository/" target="_blank" rel="noopener noreferrer">list of available packages</a> is. So, if you know of a package or have authored one yourself, please head over to <a href="https://github.com/keneanung/nexus-package-repository" target="_blank" rel="noopener noreferrer">https://github.com/keneanung/nexus-package-repository</a> and either add the package via pull request or open an issue so I can add it.</p><p>If you like the project, please consider leaving a star on the <a href="https://github.com/keneanung/nexus-package-manager" target="_blank" rel="noopener noreferrer">GitHub project</a> and <a href="https://github.com/sponsors/keneanung" target="_blank" rel="noopener noreferrer">sponsoring me</a>.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="v011-infrastructure-fix">v0.1.1 Infrastructure fix<a class="hash-link" href="#v011-infrastructure-fix" title="Direct link to heading">​</a></h2><p>This version bump was only for infrastructure fixes. The package was not modified.</p>]]></content:encoded>
+        </item>
+    </channel>
+</rss>
