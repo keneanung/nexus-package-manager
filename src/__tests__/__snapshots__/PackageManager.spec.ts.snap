@@ -2,16 +2,16 @@
 
 exports[`Should ask the Nexus client to uninstall and then install a new version of a package with a given name on update of package 1`] = `
 [MockFunction] {
-  "calls": Array [
-    Array [
-      Object {
+  "calls": [
+    [
+      {
         "description": "bar",
         "name": "foo",
       },
     ],
   ],
-  "results": Array [
-    Object {
+  "results": [
+    {
       "type": "return",
       "value": undefined,
     },
@@ -21,16 +21,16 @@ exports[`Should ask the Nexus client to uninstall and then install a new version
 
 exports[`Should have installed package after call to install 1`] = `
 [MockFunction] {
-  "calls": Array [
-    Array [
-      Object {
+  "calls": [
+    [
+      {
         "description": "bar",
         "name": "foo",
       },
     ],
   ],
-  "results": Array [
-    Object {
+  "results": [
+    {
       "type": "return",
       "value": undefined,
     },
@@ -39,9 +39,9 @@ exports[`Should have installed package after call to install 1`] = `
 `;
 
 exports[`Should parse response correctly 1`] = `
-Array [
-  Object {
-    "dependencies": Array [],
+[
+  {
+    "dependencies": [],
     "description": "Event Bus similar to the Nexus function system, but available outside of the GUI",
     "name": "Event Bus",
     "packageName": "eventbus",
@@ -51,9 +51,9 @@ Array [
 `;
 
 exports[`Should update correctly if called consecutely 1`] = `
-Array [
-  Object {
-    "dependencies": Array [
+[
+  {
+    "dependencies": [
       "secondFoo",
     ],
     "description": "This is the second response",
