@@ -5,6 +5,7 @@
       "module": "commonjs",
       "target": "esNext",
       "jsx": "react-jsx",
+      "jsxImportSource": "@emotion/react",
       "allowJs": true,
       "declaration": true,
       "strict": true,

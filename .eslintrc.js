@@ -5,6 +5,7 @@ module.exports = {
       '@typescript-eslint',
       'jest',
       'jsdoc',
+      '@emotion',
     ],
     extends: [
       'eslint:recommended',

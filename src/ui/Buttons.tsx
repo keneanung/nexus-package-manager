@@ -1,4 +1,11 @@
 import React from 'react';
+import { css } from '@emotion/react'
+
+const buttonCss = css`
+  &:hover {
+    color: black
+  }
+`;
 
 type ButtonProps = {
   onClick: () => void;
@@ -15,6 +22,7 @@ type ButtonProps = {
 export function SmallButton({ onClick, text }: ButtonProps) {
   return (
     <button
+      css={buttonCss}
       onClick={onClick}
       className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
     >
@@ -34,6 +42,7 @@ export function SmallButton({ onClick, text }: ButtonProps) {
 export function LargeButton({ onClick, text }: ButtonProps) {
   return (
     <button
+      css={buttonCss}
       onClick={onClick}
       className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeLarge MuiButton-sizeLarge"
     >

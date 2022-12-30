@@ -1,9 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should have a table with single package data to install if one package was provided and not installed 1`] = `
+.emotion-0:hover {
+  color: black;
+}
+
+.emotion-1:hover {
+  color: black;
+}
+
 <div>
   <button
-    class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeLarge MuiButton-sizeLarge"
+    class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeLarge MuiButton-sizeLarge emotion-0"
   >
     <span
       class="MuiButton-label"
@@ -44,7 +52,7 @@ exports[`Should have a table with single package data to install if one package 
         </td>
         <td>
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+            class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall emotion-1"
           >
             <span
               class="MuiButton-label"
@@ -63,9 +71,17 @@ exports[`Should have a table with single package data to install if one package 
 `;
 
 exports[`Should have a table with single package data to install if one package was provided and uninstalled after clicking the button 1`] = `
+.emotion-0:hover {
+  color: black;
+}
+
+.emotion-1:hover {
+  color: black;
+}
+
 <div>
   <button
-    class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeLarge MuiButton-sizeLarge"
+    class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeLarge MuiButton-sizeLarge emotion-0"
   >
     <span
       class="MuiButton-label"
@@ -106,7 +122,7 @@ exports[`Should have a table with single package data to install if one package 
         </td>
         <td>
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+            class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall emotion-1"
           >
             <span
               class="MuiButton-label"
@@ -125,9 +141,17 @@ exports[`Should have a table with single package data to install if one package 
 `;
 
 exports[`Should have a table with single package data to update if one package was provided and installed 1`] = `
+.emotion-0:hover {
+  color: black;
+}
+
+.emotion-1:hover {
+  color: black;
+}
+
 <div>
   <button
-    class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeLarge MuiButton-sizeLarge"
+    class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeLarge MuiButton-sizeLarge emotion-0"
   >
     <span
       class="MuiButton-label"
@@ -168,7 +192,7 @@ exports[`Should have a table with single package data to update if one package w
         </td>
         <td>
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+            class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall emotion-1"
           >
             <span
               class="MuiButton-label"
@@ -180,7 +204,7 @@ exports[`Should have a table with single package data to update if one package w
             />
           </button>
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+            class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall emotion-1"
           >
             <span
               class="MuiButton-label"
@@ -199,9 +223,17 @@ exports[`Should have a table with single package data to update if one package w
 `;
 
 exports[`Should have a table with single package data to update if one package was provided and installed after clicking the button 1`] = `
+.emotion-0:hover {
+  color: black;
+}
+
+.emotion-1:hover {
+  color: black;
+}
+
 <div>
   <button
-    class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeLarge MuiButton-sizeLarge"
+    class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeLarge MuiButton-sizeLarge emotion-0"
   >
     <span
       class="MuiButton-label"
@@ -242,7 +274,7 @@ exports[`Should have a table with single package data to update if one package w
         </td>
         <td>
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+            class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall emotion-1"
           >
             <span
               class="MuiButton-label"
@@ -254,7 +286,7 @@ exports[`Should have a table with single package data to update if one package w
             />
           </button>
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+            class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall emotion-1"
           >
             <span
               class="MuiButton-label"
@@ -273,9 +305,13 @@ exports[`Should have a table with single package data to update if one package w
 `;
 
 exports[`Should have an empty table without package data 1`] = `
+.emotion-0:hover {
+  color: black;
+}
+
 <div>
   <button
-    class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeLarge MuiButton-sizeLarge"
+    class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeLarge MuiButton-sizeLarge emotion-0"
   >
     <span
       class="MuiButton-label"

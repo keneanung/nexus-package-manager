@@ -20,5 +20,8 @@
   ],
   "automock": false,
   "resetMocks": false,
-  "testEnvironment": "jsdom"
+  "testEnvironment": "jsdom",
+  "snapshotSerializers": [
+    "@emotion/jest/serializer"
+  ]
 }
