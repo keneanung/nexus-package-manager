@@ -38,6 +38,38 @@ exports[`Should have installed package after call to install 1`] = `
 }
 `;
 
+exports[`Should install depency packages with original package 1`] = `
+[MockFunction] {
+  "calls": [
+    [
+      {
+        "description": "bar",
+        "name": "first",
+      },
+    ],
+    [
+      {
+        "dependencies": [
+          "first",
+        ],
+        "description": "baz",
+        "name": "second",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
 exports[`Should parse response correctly 1`] = `
 [
   {
@@ -62,4 +94,26 @@ exports[`Should update correctly if called consecutely 1`] = `
     "url": "https://keneanung.github.io/nexus-event-bus/second.nxs",
   },
 ]
+`;
+
+exports[`Should use installed depency packages with original package 1`] = `
+[MockFunction] {
+  "calls": [
+    [
+      {
+        "dependencies": [
+          "first",
+        ],
+        "description": "baz",
+        "name": "second",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
 `;

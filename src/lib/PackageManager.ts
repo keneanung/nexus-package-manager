@@ -64,6 +64,10 @@ export class PackageManager implements IPackageManager {
     if (!pkgEntry) {
       throw new Error(`Package ${packageName} not found`);
     }
+    const notInstalledDependencies = pkgEntry.dependencies.filter((entry) => !this.isInstalled(entry));
+    for (const dependencyPackage of notInstalledDependencies) {
+      await this.installAsync(dependencyPackage);
+    }
     const response = await fetch(pkgEntry.url);
     const pkgJson = await response.json();
 
