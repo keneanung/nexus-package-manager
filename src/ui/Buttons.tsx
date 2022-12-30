@@ -1,9 +1,9 @@
 import React from 'react';
-import { css } from '@emotion/react'
+import { css } from '@emotion/react';
 
 const buttonCss = css`
   &:hover {
-    color: black
+    color: black;
   }
 `;
 
