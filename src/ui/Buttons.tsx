@@ -10,6 +10,7 @@ const buttonCss = css`
 type ButtonProps = {
   onClick: () => void;
   text: string;
+  testId?: string;
 };
 /**
  * Small Nexus button component that can have a custom click handler and a text.
@@ -19,12 +20,13 @@ type ButtonProps = {
  * @param {string} root0.text The text the button should display.
  * @returns {JSX.Element} The button component.
  */
-export function SmallButton({ onClick, text }: ButtonProps) {
+export function SmallButton({ onClick, text, testId }: ButtonProps) {
   return (
     <button
       css={buttonCss}
       onClick={onClick}
       className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+      data-testid={testId}
     >
       <span className="MuiButton-label">{text}</span>
       <span className="MuiTouchRipple-root" />

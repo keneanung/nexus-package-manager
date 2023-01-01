@@ -31,7 +31,7 @@ function PackageListRow({
       <td>{entry.packageName}</td>
       <td>{entry.description}</td>
       <td>
-        <SmallButton onClick={() => toPackageDetailView(entry.packageName)} text="Details" />
+        <SmallButton onClick={() => toPackageDetailView(entry.packageName)} text="Details" testId={entry.packageName + "-details"}/>
         {installedPackages[entry.packageName] ? (
           <InstalledPackageButtons packageManager={packageManager} packageName={entry.packageName} />
         ) : (
@@ -139,7 +139,7 @@ export function PackageManagerUi({ packageManager }: { packageManager: IPackageM
       returnToMainView();
       return <PackageManagerMainView packageManager={packageManager} toPackageDetailView={toDetailView} />;
     }
-    return <PackageDetailView packageDetails={packageDetails} returnToMainViewCallback={returnToMainView} />;
+    return <PackageDetailView packageDetails={packageDetails} returnToMainViewCallback={returnToMainView} switchDetailViewCallback={toDetailView} />;
   } else {
     return <PackageManagerMainView packageManager={packageManager} toPackageDetailView={toDetailView} />;
   }
@@ -163,9 +163,11 @@ type ViewState = PackageDetailViewState | MainViewState;
 function PackageDetailView({
   packageDetails,
   returnToMainViewCallback,
+  switchDetailViewCallback,
 }: {
   packageDetails: PackageEntry;
   returnToMainViewCallback: () => void;
+  switchDetailViewCallback: (packageName: string) => void
 }) {
   return (
     <>
@@ -177,7 +179,7 @@ function PackageDetailView({
           <p>Dependencies:</p>
           <ul>
             {packageDetails.dependencies.map((dependency) => (
-              <li key={dependency}>{dependency}</li>
+              <li key={dependency} onClick={() => switchDetailViewCallback(dependency)}>{dependency}</li>
             ))}
           </ul>
         </>
