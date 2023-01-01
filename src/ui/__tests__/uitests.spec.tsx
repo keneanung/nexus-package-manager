@@ -36,7 +36,10 @@ beforeAll(() =>
 
 // Reset handlers so that each test could alter them
 // without affecting other, unrelated tests.
-afterEach(() => server.resetHandlers());
+afterEach(() => {
+  server.resetHandlers();
+  isNexusPackageInstalledMock.mockReset();
+});
 
 // Don't forget to clean up afterwards.
 afterAll(() => server.close());
@@ -93,6 +96,43 @@ test('Should have a table with single package data to install if one package was
   await waitFor(() => expect(screen.queryAllByRole('row')).toHaveLength(2));
   fireEvent.click(screen.getByText('Uninstall'));
   await waitFor(() => expect(screen.getByText('Install')).toBeDefined());
+
+  expect(container).toMatchSnapshot();
+});
+
+test('Should switch to details view of package after clicking the button', async () => {
+  const packageManager = new PackageManager();
+  const { container } = render(<PackageManagerUi packageManager={packageManager} />);
+  server.use(
+    rest.get('https://keneanung.github.io/nexus-package-repository/repository.json', (_, result, context) => {
+      return result.once(context.json([{
+        dependencies: ['dependency'],
+        description: 'foo',
+        name: 'bar',
+        packageName: 'barPackage',
+        url: 'https://mykg.com/bar.json',
+      }]));
+    }),
+  );
+
+  fireEvent.click(screen.getByText('Update package listing'));
+  await waitFor(() => expect(screen.queryAllByRole('row')).toHaveLength(2));
+  fireEvent.click(screen.getByText('Details'));
+  await waitFor(() => expect(screen.getByText('bar', {selector: 'h1'})).toBeDefined());
+
+  expect(container).toMatchSnapshot();
+});
+
+test('Should switch to details view of package after clicking the button and return to overview on click on back', async () => {
+  const packageManager = new PackageManager();
+  const { container } = render(<PackageManagerUi packageManager={packageManager} />);
+
+  fireEvent.click(screen.getByText('Update package listing'));
+  await waitFor(() => expect(screen.queryAllByRole('row')).toHaveLength(2));
+  fireEvent.click(screen.getByText('Details'));
+  await waitFor(() => expect(screen.getByText('bar', {selector: 'h1'})).toBeDefined());
+  fireEvent.click(screen.getByText('Back'));
+  await waitFor(() => expect(screen.queryAllByRole('row')).toHaveLength(2));
 
   expect(container).toMatchSnapshot();
 });

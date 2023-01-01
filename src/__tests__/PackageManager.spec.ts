@@ -247,8 +247,8 @@ test('Should not throw on error in callback function for update.', async () => {
 
   await sut.updateAsync();
 
-  expect(callback).toBeCalledTimes(1);
-  expect(console.error).toBeCalledTimes(1);
+  expect(callback).toHaveBeenCalledTimes(1);
+  expect(console.error).toHaveBeenCalledTimes(1);
 });
 
 test('Should not throw on error in callback function for install.', async () => {
@@ -274,8 +274,8 @@ test('Should not throw on error in callback function for install.', async () => 
 
   await sut.installAsync('second');
 
-  expect(callback).toBeCalledTimes(1);
-  expect(console.error).toBeCalledTimes(1);
+  expect(callback).toHaveBeenCalledTimes(1);
+  expect(console.error).toHaveBeenCalledTimes(1);
 });
 
 test('Should install depency packages with original package', async () => {
