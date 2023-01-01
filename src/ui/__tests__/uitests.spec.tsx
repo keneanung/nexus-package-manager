@@ -135,7 +135,7 @@ test('Should switch to details view of package after clicking the button and ret
   await waitFor(() => expect(screen.queryAllByRole('row')).toHaveLength(2));
   fireEvent.click(screen.getByText('Details'));
   await waitFor(() => expect(screen.getByText('bar', { selector: 'h1' })).toBeDefined());
-  fireEvent.click(screen.getByText('Back'));
+  fireEvent.click(screen.getByText('Return to package listing'));
   await waitFor(() => expect(screen.queryAllByRole('row')).toHaveLength(2));
 
   expect(container).toMatchSnapshot();

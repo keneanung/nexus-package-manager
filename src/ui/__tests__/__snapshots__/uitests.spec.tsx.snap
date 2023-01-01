@@ -399,12 +399,12 @@ exports[`Should switch to details view of package after clicking the button 1`] 
 
 <div>
   <button
-    class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall emotion-0"
+    class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeLarge MuiButton-sizeLarge emotion-0"
   >
     <span
       class="MuiButton-label"
     >
-      Back
+      Return to package listing
     </span>
     <span
       class="MuiTouchRipple-root"

@@ -169,7 +169,7 @@ function PackageDetailView({
 }) {
   return (
     <>
-      <SmallButton onClick={returnToMainViewCallback} text="Back" />
+      <LargeButton onClick={returnToMainViewCallback} text="Return to package listing" />
       <h1>{packageDetails.name}</h1>
       <p>{packageDetails.description}</p>
       {packageDetails.dependencies.length > 0 ? (
