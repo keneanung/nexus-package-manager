@@ -31,7 +31,11 @@ function PackageListRow({
       <td>{entry.packageName}</td>
       <td>{entry.description}</td>
       <td>
-        <SmallButton onClick={() => toPackageDetailView(entry.packageName)} text="Details" testId={entry.packageName + "-details"}/>
+        <SmallButton
+          onClick={() => toPackageDetailView(entry.packageName)}
+          text="Details"
+          testId={entry.packageName + '-details'}
+        />
         {installedPackages[entry.packageName] ? (
           <InstalledPackageButtons packageManager={packageManager} packageName={entry.packageName} />
         ) : (
@@ -139,7 +143,13 @@ export function PackageManagerUi({ packageManager }: { packageManager: IPackageM
       returnToMainView();
       return <PackageManagerMainView packageManager={packageManager} toPackageDetailView={toDetailView} />;
     }
-    return <PackageDetailView packageDetails={packageDetails} returnToMainViewCallback={returnToMainView} switchDetailViewCallback={toDetailView} />;
+    return (
+      <PackageDetailView
+        packageDetails={packageDetails}
+        returnToMainViewCallback={returnToMainView}
+        switchDetailViewCallback={toDetailView}
+      />
+    );
   } else {
     return <PackageManagerMainView packageManager={packageManager} toPackageDetailView={toDetailView} />;
   }
@@ -167,19 +177,27 @@ function PackageDetailView({
 }: {
   packageDetails: PackageEntry;
   returnToMainViewCallback: () => void;
-  switchDetailViewCallback: (packageName: string) => void
+  switchDetailViewCallback: (packageName: string) => void;
 }) {
   return (
     <>
       <LargeButton onClick={returnToMainViewCallback} text="Return to package listing" />
       <h1>{packageDetails.name}</h1>
       <p>{packageDetails.description}</p>
+      {packageDetails.website !== undefined ? (
+        <>
+          <h2>Website for more information</h2>
+          <p>{packageDetails.website}</p>
+        </>
+      ) : null}
       {packageDetails.dependencies.length > 0 ? (
         <>
-          <p>Dependencies:</p>
+          <h2>Dependencies</h2>
           <ul>
             {packageDetails.dependencies.map((dependency) => (
-              <li key={dependency} onClick={() => switchDetailViewCallback(dependency)}>{dependency}</li>
+              <li key={dependency} onClick={() => switchDetailViewCallback(dependency)}>
+                {dependency}
+              </li>
             ))}
           </ul>
         </>

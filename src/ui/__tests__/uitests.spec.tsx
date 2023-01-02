@@ -18,6 +18,7 @@ const server = setupServer(
           name: 'bar',
           packageName: 'barPackage',
           url: 'https://mykg.com/bar.json',
+          website: 'https://mypkg.com',
         },
       ]),
     );
@@ -113,6 +114,7 @@ test('Should switch to details view of package after clicking the button', async
             name: 'bar',
             packageName: 'barPackage',
             url: 'https://mykg.com/bar.json',
+            website: 'https://mypkg.com',
           },
         ]),
       );
@@ -136,10 +138,10 @@ test('Should switch to details view of dependency package after clicking the dep
         context.json([
           {
             dependencies: [],
-            description: "This is the dependency",
+            description: 'This is the dependency',
             name: 'dependency',
             packageName: 'dependency',
-            url: 'https://mypkg.com/dependency.json'
+            url: 'https://mypkg.com/dependency.json',
           },
           {
             dependencies: ['dependency'],
@@ -157,7 +159,7 @@ test('Should switch to details view of dependency package after clicking the dep
   await waitFor(() => expect(screen.queryAllByRole('row')).toHaveLength(3));
   fireEvent.click(screen.getByTestId('barPackage-details'));
   await waitFor(() => expect(screen.getByText('bar', { selector: 'h1' })).toBeDefined());
-  fireEvent.click(screen.getByText('dependency'))
+  fireEvent.click(screen.getByText('dependency'));
   await waitFor(() => expect(screen.getByText('dependency', { selector: 'h1' })).toBeDefined());
 
   expect(container).toMatchSnapshot();

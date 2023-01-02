@@ -447,9 +447,15 @@ exports[`Should switch to details view of package after clicking the button 1`] 
   <p>
     foo
   </p>
+  <h2>
+    Website for more information
+  </h2>
   <p>
-    Dependencies:
+    https://mypkg.com
   </p>
+  <h2>
+    Dependencies
+  </h2>
   <ul>
     <li>
       dependency
