@@ -187,7 +187,7 @@ function PackageDetailView({
       {packageDetails.website !== undefined ? (
         <>
           <h2>Website for more information</h2>
-          <p>{packageDetails.website}</p>
+          <p><a href={packageDetails.website} target='_blank'>{packageDetails.website}</a></p>
         </>
       ) : null}
       {packageDetails.dependencies.length > 0 ? (

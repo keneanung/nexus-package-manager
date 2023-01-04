@@ -451,7 +451,12 @@ exports[`Should switch to details view of package after clicking the button 1`] 
     Website for more information
   </h2>
   <p>
-    https://mypkg.com
+    <a
+      href="https://mypkg.com"
+      target="_blank"
+    >
+      https://mypkg.com
+    </a>
   </p>
   <h2>
     Dependencies
