@@ -9,14 +9,14 @@ import { getNexusIconInfo } from '../getNexusIconInfo';
 jest.mock('../../lib/nexusPackageInterface');
 const isNexusPackageInstalledMock = jest.mocked(isNexusPackageInstalled);
 jest.mock('../getNexusIconInfo');
-const getNexusIconInfoMock = jest.mocked(getNexusIconInfo)
+const getNexusIconInfoMock = jest.mocked(getNexusIconInfo);
 getNexusIconInfoMock.mockImplementation(() => {
   return {
     width: 512,
     height: 640,
-    svgPath: "this is an svg path"
-  }
-})
+    svgPath: 'this is an svg path',
+  };
+});
 const server = setupServer(
   rest.get('https://keneanung.github.io/nexus-package-repository/repository.json', (req, res, ctx) => {
     return res(
