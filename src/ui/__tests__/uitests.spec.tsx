@@ -5,9 +5,18 @@ import { setupServer } from 'msw/node';
 import { render, fireEvent, waitFor, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { isNexusPackageInstalled } from '../../lib/nexusPackageInterface';
+import { getNexusIconInfo } from '../getNexusIconInfo';
 jest.mock('../../lib/nexusPackageInterface');
 const isNexusPackageInstalledMock = jest.mocked(isNexusPackageInstalled);
-
+jest.mock('../getNexusIconInfo');
+const getNexusIconInfoMock = jest.mocked(getNexusIconInfo)
+getNexusIconInfoMock.mockImplementation(() => {
+  return {
+    width: 512,
+    height: 640,
+    svgPath: "this is an svg path"
+  }
+})
 const server = setupServer(
   rest.get('https://keneanung.github.io/nexus-package-repository/repository.json', (req, res, ctx) => {
     return res(
@@ -82,8 +91,8 @@ test('Should have a table with single package data to update if one package was 
 
   fireEvent.click(screen.getByText('Update package listing'));
   await waitFor(() => expect(screen.queryAllByRole('row')).toHaveLength(2));
-  fireEvent.click(screen.getByText('Install'));
-  await waitFor(() => expect(screen.getByText('Uninstall')).toBeDefined());
+  fireEvent.click(screen.getByTestId('barPackage-install'));
+  await waitFor(() => expect(screen.getByTestId('barPackage-uninstall')).toBeDefined());
 
   expect(container).toMatchSnapshot();
 });
@@ -95,8 +104,8 @@ test('Should have a table with single package data to install if one package was
 
   fireEvent.click(screen.getByText('Update package listing'));
   await waitFor(() => expect(screen.queryAllByRole('row')).toHaveLength(2));
-  fireEvent.click(screen.getByText('Uninstall'));
-  await waitFor(() => expect(screen.getByText('Install')).toBeDefined());
+  fireEvent.click(screen.getByTestId('barPackage-uninstall'));
+  await waitFor(() => expect(screen.getByTestId('barPackage-install')).toBeDefined());
 
   expect(container).toMatchSnapshot();
 });
@@ -123,7 +132,7 @@ test('Should switch to details view of package after clicking the button', async
 
   fireEvent.click(screen.getByText('Update package listing'));
   await waitFor(() => expect(screen.queryAllByRole('row')).toHaveLength(2));
-  fireEvent.click(screen.getByText('Details'));
+  fireEvent.click(screen.getByTestId('barPackage-details'));
   await waitFor(() => expect(screen.getByText('bar', { selector: 'h1' })).toBeDefined());
 
   expect(container).toMatchSnapshot();
@@ -171,7 +180,7 @@ test('Should switch to details view of package after clicking the button and ret
 
   fireEvent.click(screen.getByText('Update package listing'));
   await waitFor(() => expect(screen.queryAllByRole('row')).toHaveLength(2));
-  fireEvent.click(screen.getByText('Details'));
+  fireEvent.click(screen.getByTestId('barPackage-details'));
   await waitFor(() => expect(screen.getByText('bar', { selector: 'h1' })).toBeDefined());
   fireEvent.click(screen.getByText('Return to package listing'));
   await waitFor(() => expect(screen.queryAllByRole('row')).toHaveLength(2));

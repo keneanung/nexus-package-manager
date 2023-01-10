@@ -28,12 +28,10 @@ function PackageListRow({
   return (
     <tr>
       <td>{entry.name}</td>
-      <td>{entry.packageName}</td>
-      <td>{entry.description}</td>
       <td>
         <SmallButton
           onClick={() => toPackageDetailView(entry.packageName)}
-          text="Details"
+          icon="circle-info"
           testId={entry.packageName + '-details'}
         />
         {installedPackages[entry.packageName] ? (
@@ -58,7 +56,8 @@ function NotInstalledPackageButtons({
       onClick={() => {
         packageManager.installAsync(packageName);
       }}
-      text="Install"
+      icon="disc-drive"
+      testId={`${packageName}-install`}
     />
   );
 }
@@ -76,13 +75,15 @@ function InstalledPackageButtons({
         onClick={() => {
           packageManager.updatePackageAsync(packageName);
         }}
-        text="Update"
+        icon="square-pen"
+        testId={`${packageName}-update`}
       />
       <SmallButton
         onClick={() => {
           packageManager.uninstall(packageName);
         }}
-        text="Uninstall"
+        icon="trash"
+        testId={`${packageName}-uninstall`}
       />
     </>
   );
@@ -104,8 +105,6 @@ function PackageListing({
       <thead>
         <tr>
           <td>Name</td>
-          <td>Package Name</td>
-          <td>Description</td>
           <td>Actions</td>
         </tr>
       </thead>
@@ -184,12 +183,8 @@ function PackageDetailView({
       <LargeButton onClick={returnToMainViewCallback} text="Return to package listing" />
       <h1>{packageDetails.name}</h1>
       <p>{packageDetails.description}</p>
-      {packageDetails.website !== undefined ? (
-        <>
-          <h2>Website for more information</h2>
-          <p><a href={packageDetails.website} target='_blank'>{packageDetails.website}</a></p>
-        </>
-      ) : null}
+      <h2>Version</h2>
+      <p>Available: {packageDetails.version}</p>
       {packageDetails.dependencies.length > 0 ? (
         <>
           <h2>Dependencies</h2>
@@ -200,6 +195,16 @@ function PackageDetailView({
               </li>
             ))}
           </ul>
+        </>
+      ) : null}
+      {packageDetails.website !== undefined ? (
+        <>
+          <h2>Website for more information</h2>
+          <p>
+            <a href={packageDetails.website} target="_blank">
+              {packageDetails.website}
+            </a>
+          </p>
         </>
       ) : null}
     </>

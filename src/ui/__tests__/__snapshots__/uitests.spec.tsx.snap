@@ -29,12 +29,6 @@ exports[`Should have a table with single package data to install if one package 
           Name
         </td>
         <td>
-          Package Name
-        </td>
-        <td>
-          Description
-        </td>
-        <td>
           Actions
         </td>
       </tr>
@@ -45,12 +39,6 @@ exports[`Should have a table with single package data to install if one package 
           bar
         </td>
         <td>
-          barPackage
-        </td>
-        <td>
-          foo
-        </td>
-        <td>
           <button
             class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall emotion-1"
             data-testid="barPackage-details"
@@ -58,7 +46,16 @@ exports[`Should have a table with single package data to install if one package 
             <span
               class="MuiButton-label"
             >
-              Details
+              <span>
+                <svg
+                  class="svg-inline--fa"
+                  viewBox="0 0 512 640"
+                >
+                  <path
+                    d="this is an svg path"
+                  />
+                </svg>
+              </span>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -66,11 +63,21 @@ exports[`Should have a table with single package data to install if one package 
           </button>
           <button
             class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall emotion-1"
+            data-testid="barPackage-install"
           >
             <span
               class="MuiButton-label"
             >
-              Install
+              <span>
+                <svg
+                  class="svg-inline--fa"
+                  viewBox="0 0 512 640"
+                >
+                  <path
+                    d="this is an svg path"
+                  />
+                </svg>
+              </span>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -112,12 +119,6 @@ exports[`Should have a table with single package data to install if one package 
           Name
         </td>
         <td>
-          Package Name
-        </td>
-        <td>
-          Description
-        </td>
-        <td>
           Actions
         </td>
       </tr>
@@ -128,12 +129,6 @@ exports[`Should have a table with single package data to install if one package 
           bar
         </td>
         <td>
-          barPackage
-        </td>
-        <td>
-          foo
-        </td>
-        <td>
           <button
             class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall emotion-1"
             data-testid="barPackage-details"
@@ -141,7 +136,16 @@ exports[`Should have a table with single package data to install if one package 
             <span
               class="MuiButton-label"
             >
-              Details
+              <span>
+                <svg
+                  class="svg-inline--fa"
+                  viewBox="0 0 512 640"
+                >
+                  <path
+                    d="this is an svg path"
+                  />
+                </svg>
+              </span>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -149,11 +153,21 @@ exports[`Should have a table with single package data to install if one package 
           </button>
           <button
             class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall emotion-1"
+            data-testid="barPackage-install"
           >
             <span
               class="MuiButton-label"
             >
-              Install
+              <span>
+                <svg
+                  class="svg-inline--fa"
+                  viewBox="0 0 512 640"
+                >
+                  <path
+                    d="this is an svg path"
+                  />
+                </svg>
+              </span>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -195,12 +209,6 @@ exports[`Should have a table with single package data to update if one package w
           Name
         </td>
         <td>
-          Package Name
-        </td>
-        <td>
-          Description
-        </td>
-        <td>
           Actions
         </td>
       </tr>
@@ -211,12 +219,6 @@ exports[`Should have a table with single package data to update if one package w
           bar
         </td>
         <td>
-          barPackage
-        </td>
-        <td>
-          foo
-        </td>
-        <td>
           <button
             class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall emotion-1"
             data-testid="barPackage-details"
@@ -224,7 +226,16 @@ exports[`Should have a table with single package data to update if one package w
             <span
               class="MuiButton-label"
             >
-              Details
+              <span>
+                <svg
+                  class="svg-inline--fa"
+                  viewBox="0 0 512 640"
+                >
+                  <path
+                    d="this is an svg path"
+                  />
+                </svg>
+              </span>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -232,11 +243,21 @@ exports[`Should have a table with single package data to update if one package w
           </button>
           <button
             class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall emotion-1"
+            data-testid="barPackage-update"
           >
             <span
               class="MuiButton-label"
             >
-              Update
+              <span>
+                <svg
+                  class="svg-inline--fa"
+                  viewBox="0 0 512 640"
+                >
+                  <path
+                    d="this is an svg path"
+                  />
+                </svg>
+              </span>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -244,11 +265,21 @@ exports[`Should have a table with single package data to update if one package w
           </button>
           <button
             class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall emotion-1"
+            data-testid="barPackage-uninstall"
           >
             <span
               class="MuiButton-label"
             >
-              Uninstall
+              <span>
+                <svg
+                  class="svg-inline--fa"
+                  viewBox="0 0 512 640"
+                >
+                  <path
+                    d="this is an svg path"
+                  />
+                </svg>
+              </span>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -290,12 +321,6 @@ exports[`Should have a table with single package data to update if one package w
           Name
         </td>
         <td>
-          Package Name
-        </td>
-        <td>
-          Description
-        </td>
-        <td>
           Actions
         </td>
       </tr>
@@ -306,12 +331,6 @@ exports[`Should have a table with single package data to update if one package w
           bar
         </td>
         <td>
-          barPackage
-        </td>
-        <td>
-          foo
-        </td>
-        <td>
           <button
             class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall emotion-1"
             data-testid="barPackage-details"
@@ -319,7 +338,16 @@ exports[`Should have a table with single package data to update if one package w
             <span
               class="MuiButton-label"
             >
-              Details
+              <span>
+                <svg
+                  class="svg-inline--fa"
+                  viewBox="0 0 512 640"
+                >
+                  <path
+                    d="this is an svg path"
+                  />
+                </svg>
+              </span>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -327,11 +355,21 @@ exports[`Should have a table with single package data to update if one package w
           </button>
           <button
             class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall emotion-1"
+            data-testid="barPackage-update"
           >
             <span
               class="MuiButton-label"
             >
-              Update
+              <span>
+                <svg
+                  class="svg-inline--fa"
+                  viewBox="0 0 512 640"
+                >
+                  <path
+                    d="this is an svg path"
+                  />
+                </svg>
+              </span>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -339,11 +377,21 @@ exports[`Should have a table with single package data to update if one package w
           </button>
           <button
             class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall emotion-1"
+            data-testid="barPackage-uninstall"
           >
             <span
               class="MuiButton-label"
             >
-              Uninstall
+              <span>
+                <svg
+                  class="svg-inline--fa"
+                  viewBox="0 0 512 640"
+                >
+                  <path
+                    d="this is an svg path"
+                  />
+                </svg>
+              </span>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -381,12 +429,6 @@ exports[`Should have an empty table without package data 1`] = `
           Name
         </td>
         <td>
-          Package Name
-        </td>
-        <td>
-          Description
-        </td>
-        <td>
           Actions
         </td>
       </tr>
@@ -420,6 +462,12 @@ exports[`Should switch to details view of dependency package after clicking the 
   <p>
     This is the dependency
   </p>
+  <h2>
+    Version
+  </h2>
+  <p>
+    Available: 
+  </p>
 </div>
 `;
 
@@ -448,6 +496,20 @@ exports[`Should switch to details view of package after clicking the button 1`] 
     foo
   </p>
   <h2>
+    Version
+  </h2>
+  <p>
+    Available: 
+  </p>
+  <h2>
+    Dependencies
+  </h2>
+  <ul>
+    <li>
+      dependency
+    </li>
+  </ul>
+  <h2>
     Website for more information
   </h2>
   <p>
@@ -458,14 +520,6 @@ exports[`Should switch to details view of package after clicking the button 1`] 
       https://mypkg.com
     </a>
   </p>
-  <h2>
-    Dependencies
-  </h2>
-  <ul>
-    <li>
-      dependency
-    </li>
-  </ul>
 </div>
 `;
 
@@ -498,12 +552,6 @@ exports[`Should switch to details view of package after clicking the button and 
           Name
         </td>
         <td>
-          Package Name
-        </td>
-        <td>
-          Description
-        </td>
-        <td>
           Actions
         </td>
       </tr>
@@ -514,12 +562,6 @@ exports[`Should switch to details view of package after clicking the button and 
           bar
         </td>
         <td>
-          barPackage
-        </td>
-        <td>
-          foo
-        </td>
-        <td>
           <button
             class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall emotion-1"
             data-testid="barPackage-details"
@@ -527,7 +569,16 @@ exports[`Should switch to details view of package after clicking the button and 
             <span
               class="MuiButton-label"
             >
-              Details
+              <span>
+                <svg
+                  class="svg-inline--fa"
+                  viewBox="0 0 512 640"
+                >
+                  <path
+                    d="this is an svg path"
+                  />
+                </svg>
+              </span>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -535,11 +586,21 @@ exports[`Should switch to details view of package after clicking the button and 
           </button>
           <button
             class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall emotion-1"
+            data-testid="barPackage-install"
           >
             <span
               class="MuiButton-label"
             >
-              Install
+              <span>
+                <svg
+                  class="svg-inline--fa"
+                  viewBox="0 0 512 640"
+                >
+                  <path
+                    d="this is an svg path"
+                  />
+                </svg>
+              </span>
             </span>
             <span
               class="MuiTouchRipple-root"
