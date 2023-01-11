@@ -5,6 +5,11 @@ import { NexusIcon } from './Icons';
 const buttonCss = css`
   &:hover {
     color: black;
+    fill: black;
+  }
+
+  & {
+    fill: white
   }
 `;
 

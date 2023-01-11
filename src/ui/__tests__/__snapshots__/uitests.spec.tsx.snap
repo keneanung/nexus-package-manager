@@ -3,10 +3,20 @@
 exports[`Should have a table with single package data to install if one package was provided and not installed 1`] = `
 .emotion-0:hover {
   color: black;
+  fill: black;
+}
+
+.emotion-0 {
+  fill: white;
 }
 
 .emotion-1:hover {
   color: black;
+  fill: black;
+}
+
+.emotion-1 {
+  fill: white;
 }
 
 <div>
@@ -46,16 +56,14 @@ exports[`Should have a table with single package data to install if one package 
             <span
               class="MuiButton-label"
             >
-              <span>
-                <svg
-                  class="svg-inline--fa"
-                  viewBox="0 0 512 640"
-                >
-                  <path
-                    d="this is an svg path"
-                  />
-                </svg>
-              </span>
+              <svg
+                class="svg-inline--fa"
+                viewBox="0 0 512 640"
+              >
+                <path
+                  d="this is an svg path"
+                />
+              </svg>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -68,16 +76,14 @@ exports[`Should have a table with single package data to install if one package 
             <span
               class="MuiButton-label"
             >
-              <span>
-                <svg
-                  class="svg-inline--fa"
-                  viewBox="0 0 512 640"
-                >
-                  <path
-                    d="this is an svg path"
-                  />
-                </svg>
-              </span>
+              <svg
+                class="svg-inline--fa"
+                viewBox="0 0 512 640"
+              >
+                <path
+                  d="this is an svg path"
+                />
+              </svg>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -93,10 +99,20 @@ exports[`Should have a table with single package data to install if one package 
 exports[`Should have a table with single package data to install if one package was provided and uninstalled after clicking the button 1`] = `
 .emotion-0:hover {
   color: black;
+  fill: black;
+}
+
+.emotion-0 {
+  fill: white;
 }
 
 .emotion-1:hover {
   color: black;
+  fill: black;
+}
+
+.emotion-1 {
+  fill: white;
 }
 
 <div>
@@ -136,16 +152,14 @@ exports[`Should have a table with single package data to install if one package 
             <span
               class="MuiButton-label"
             >
-              <span>
-                <svg
-                  class="svg-inline--fa"
-                  viewBox="0 0 512 640"
-                >
-                  <path
-                    d="this is an svg path"
-                  />
-                </svg>
-              </span>
+              <svg
+                class="svg-inline--fa"
+                viewBox="0 0 512 640"
+              >
+                <path
+                  d="this is an svg path"
+                />
+              </svg>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -158,16 +172,14 @@ exports[`Should have a table with single package data to install if one package 
             <span
               class="MuiButton-label"
             >
-              <span>
-                <svg
-                  class="svg-inline--fa"
-                  viewBox="0 0 512 640"
-                >
-                  <path
-                    d="this is an svg path"
-                  />
-                </svg>
-              </span>
+              <svg
+                class="svg-inline--fa"
+                viewBox="0 0 512 640"
+              >
+                <path
+                  d="this is an svg path"
+                />
+              </svg>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -183,10 +195,20 @@ exports[`Should have a table with single package data to install if one package 
 exports[`Should have a table with single package data to update if one package was provided and installed 1`] = `
 .emotion-0:hover {
   color: black;
+  fill: black;
+}
+
+.emotion-0 {
+  fill: white;
 }
 
 .emotion-1:hover {
   color: black;
+  fill: black;
+}
+
+.emotion-1 {
+  fill: white;
 }
 
 <div>
@@ -226,16 +248,14 @@ exports[`Should have a table with single package data to update if one package w
             <span
               class="MuiButton-label"
             >
-              <span>
-                <svg
-                  class="svg-inline--fa"
-                  viewBox="0 0 512 640"
-                >
-                  <path
-                    d="this is an svg path"
-                  />
-                </svg>
-              </span>
+              <svg
+                class="svg-inline--fa"
+                viewBox="0 0 512 640"
+              >
+                <path
+                  d="this is an svg path"
+                />
+              </svg>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -248,16 +268,14 @@ exports[`Should have a table with single package data to update if one package w
             <span
               class="MuiButton-label"
             >
-              <span>
-                <svg
-                  class="svg-inline--fa"
-                  viewBox="0 0 512 640"
-                >
-                  <path
-                    d="this is an svg path"
-                  />
-                </svg>
-              </span>
+              <svg
+                class="svg-inline--fa"
+                viewBox="0 0 512 640"
+              >
+                <path
+                  d="this is an svg path"
+                />
+              </svg>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -270,16 +288,14 @@ exports[`Should have a table with single package data to update if one package w
             <span
               class="MuiButton-label"
             >
-              <span>
-                <svg
-                  class="svg-inline--fa"
-                  viewBox="0 0 512 640"
-                >
-                  <path
-                    d="this is an svg path"
-                  />
-                </svg>
-              </span>
+              <svg
+                class="svg-inline--fa"
+                viewBox="0 0 512 640"
+              >
+                <path
+                  d="this is an svg path"
+                />
+              </svg>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -295,10 +311,20 @@ exports[`Should have a table with single package data to update if one package w
 exports[`Should have a table with single package data to update if one package was provided and installed after clicking the button 1`] = `
 .emotion-0:hover {
   color: black;
+  fill: black;
+}
+
+.emotion-0 {
+  fill: white;
 }
 
 .emotion-1:hover {
   color: black;
+  fill: black;
+}
+
+.emotion-1 {
+  fill: white;
 }
 
 <div>
@@ -338,16 +364,14 @@ exports[`Should have a table with single package data to update if one package w
             <span
               class="MuiButton-label"
             >
-              <span>
-                <svg
-                  class="svg-inline--fa"
-                  viewBox="0 0 512 640"
-                >
-                  <path
-                    d="this is an svg path"
-                  />
-                </svg>
-              </span>
+              <svg
+                class="svg-inline--fa"
+                viewBox="0 0 512 640"
+              >
+                <path
+                  d="this is an svg path"
+                />
+              </svg>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -360,16 +384,14 @@ exports[`Should have a table with single package data to update if one package w
             <span
               class="MuiButton-label"
             >
-              <span>
-                <svg
-                  class="svg-inline--fa"
-                  viewBox="0 0 512 640"
-                >
-                  <path
-                    d="this is an svg path"
-                  />
-                </svg>
-              </span>
+              <svg
+                class="svg-inline--fa"
+                viewBox="0 0 512 640"
+              >
+                <path
+                  d="this is an svg path"
+                />
+              </svg>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -382,16 +404,14 @@ exports[`Should have a table with single package data to update if one package w
             <span
               class="MuiButton-label"
             >
-              <span>
-                <svg
-                  class="svg-inline--fa"
-                  viewBox="0 0 512 640"
-                >
-                  <path
-                    d="this is an svg path"
-                  />
-                </svg>
-              </span>
+              <svg
+                class="svg-inline--fa"
+                viewBox="0 0 512 640"
+              >
+                <path
+                  d="this is an svg path"
+                />
+              </svg>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -407,6 +427,11 @@ exports[`Should have a table with single package data to update if one package w
 exports[`Should have an empty table without package data 1`] = `
 .emotion-0:hover {
   color: black;
+  fill: black;
+}
+
+.emotion-0 {
+  fill: white;
 }
 
 <div>
@@ -441,6 +466,11 @@ exports[`Should have an empty table without package data 1`] = `
 exports[`Should switch to details view of dependency package after clicking the dependency in detail view 1`] = `
 .emotion-0:hover {
   color: black;
+  fill: black;
+}
+
+.emotion-0 {
+  fill: white;
 }
 
 <div>
@@ -474,6 +504,11 @@ exports[`Should switch to details view of dependency package after clicking the 
 exports[`Should switch to details view of package after clicking the button 1`] = `
 .emotion-0:hover {
   color: black;
+  fill: black;
+}
+
+.emotion-0 {
+  fill: white;
 }
 
 <div>
@@ -526,10 +561,20 @@ exports[`Should switch to details view of package after clicking the button 1`] 
 exports[`Should switch to details view of package after clicking the button and return to overview on click on back 1`] = `
 .emotion-0:hover {
   color: black;
+  fill: black;
+}
+
+.emotion-0 {
+  fill: white;
 }
 
 .emotion-1:hover {
   color: black;
+  fill: black;
+}
+
+.emotion-1 {
+  fill: white;
 }
 
 <div>
@@ -569,16 +614,14 @@ exports[`Should switch to details view of package after clicking the button and 
             <span
               class="MuiButton-label"
             >
-              <span>
-                <svg
-                  class="svg-inline--fa"
-                  viewBox="0 0 512 640"
-                >
-                  <path
-                    d="this is an svg path"
-                  />
-                </svg>
-              </span>
+              <svg
+                class="svg-inline--fa"
+                viewBox="0 0 512 640"
+              >
+                <path
+                  d="this is an svg path"
+                />
+              </svg>
             </span>
             <span
               class="MuiTouchRipple-root"
@@ -591,16 +634,14 @@ exports[`Should switch to details view of package after clicking the button and 
             <span
               class="MuiButton-label"
             >
-              <span>
-                <svg
-                  class="svg-inline--fa"
-                  viewBox="0 0 512 640"
-                >
-                  <path
-                    d="this is an svg path"
-                  />
-                </svg>
-              </span>
+              <svg
+                class="svg-inline--fa"
+                viewBox="0 0 512 640"
+              >
+                <path
+                  d="this is an svg path"
+                />
+              </svg>
             </span>
             <span
               class="MuiTouchRipple-root"

@@ -1,13 +1,11 @@
-import { HTMLProps } from 'react';
+import { SVGProps } from 'react';
 import { getNexusIconInfo } from './getNexusIconInfo';
 
-export const NexusIcon = ({ icon, ...otherProps }: HTMLProps<HTMLSpanElement> & { icon: string }) => {
+export const NexusIcon = ({ icon, ...otherProps }: SVGProps<SVGSVGElement> & { icon: string }) => {
   const { width, height, svgPath } = getNexusIconInfo(icon);
   return (
-    <span {...otherProps}>
-      <svg viewBox={`0 0 ${width} ${height}`} className="svg-inline--fa">
-        <path d={svgPath} />
-      </svg>
-    </span>
+    <svg viewBox={`0 0 ${width} ${height}`} className="svg-inline--fa" {...otherProps}>
+      <path d={svgPath} />
+    </svg>
   );
 };
