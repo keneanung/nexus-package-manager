@@ -40,7 +40,7 @@
     "jest-environment-jsdom": "^29.2.1",
     "jest-fetch-mock": "^3.0.3",
     "jest-mock-extended": "^3.0.1",
-    "metro-react-native-babel-preset": "^0.75.1",
+    "metro-react-native-babel-preset": "^0.76.0",
     "msw": "^1.1.0",
     "prettier": "^2.7.1",
     "react-test-renderer": "^18.2.0",
