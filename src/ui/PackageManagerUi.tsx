@@ -125,7 +125,6 @@ function PackageListing({
 
 /**
  * Functional component that is the root element of the package manager UI.
- *
  * @param {{packageManager: IPackageManager}} props The component's properties.
  * @param {IPackageManager} props.packageManager The package manager to use.
  * @returns {React.Fragment} The component.

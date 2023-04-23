@@ -9,7 +9,7 @@ const buttonCss = css`
   }
 
   & {
-    fill: white
+    fill: white;
   }
 `;
 
@@ -21,7 +21,6 @@ type ButtonProps = {
 };
 /**
  * Small Nexus button component that can have a custom click handler and a text.
- *
  * @param {ButtonProps} root0 Props of the component.
  * @param {() => void} root0.onClick The event handler for the click event.
  * @param {string} root0.text The text the button should display.
@@ -42,7 +41,6 @@ export function SmallButton({ onClick, text, testId, icon }: ButtonProps) {
 }
 /**
  * Large Nexus button component that can have a custom click handler and a text.
- *
  * @param {ButtonProps} root0 Props of the component.
  * @param {() => void} root0.onClick The event handler for the click event.
  * @param {string} root0.text The text the button should display.
