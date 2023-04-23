@@ -13,3 +13,11 @@ export const uninstallNexusPackage = (packageName: string) => {
   globalThis.nexusclient.reflexes().run_function('onUninstall', undefined, packageName);
   globalThis.nexusclient.packages().remove(packageName);
 };
+
+export const getPackageList = (): nexusclient.ReflexPackage[] => {
+  return nexusclient.reflexes().get_package_list();
+};
+
+export const setPackageList = (packageList: nexusclient.ReflexPackage[]) => {
+  nexusclient.packages().apply(packageList);
+};

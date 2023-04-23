@@ -4,10 +4,13 @@ import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import { render, fireEvent, waitFor, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { isNexusPackageInstalled } from '../../lib/nexusPackageInterface';
+import { isNexusPackageInstalled, getPackageList } from '../../lib/nexusPackageInterface';
 import { getNexusIconInfo } from '../getNexusIconInfo';
 jest.mock('../../lib/nexusPackageInterface');
 const isNexusPackageInstalledMock = jest.mocked(isNexusPackageInstalled);
+const getPackageListMock = jest.mocked(getPackageList);
+getPackageListMock.mockReturnValue([]);
+
 jest.mock('../getNexusIconInfo');
 const getNexusIconInfoMock = jest.mocked(getNexusIconInfo);
 getNexusIconInfoMock.mockImplementation(() => {

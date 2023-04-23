@@ -70,6 +70,202 @@ exports[`Should install depency packages with original package 1`] = `
 }
 `;
 
+exports[`Should log an exception about circular dependencies on updating order 1`] = `
+[MockFunction] {
+  "calls": [
+    [
+      "Error running package operation callback function",
+      [Error: Circular dependency found: first -> second],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Should log an exception about unknown dependencies on updating order 1`] = `
+[MockFunction] {
+  "calls": [
+    [
+      "Error running package operation callback function",
+      [Error: Unable to satisfy dependency third of package first],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Should not throw on error in callback function for install. 1`] = `
+[MockFunction] {
+  "calls": [
+    [
+      "Error running package operation callback function",
+      [Error],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Should not throw on error in callback function for update. 1`] = `
+[MockFunction] {
+  "calls": [
+    [
+      "Error running update callback function",
+      [Error],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Should order installed depency packages after update and expect unkown package 1`] = `
+[MockFunction] {
+  "calls": [
+    [
+      [
+        ReflexHelper {
+          "apply": [Function],
+          "description": "baz",
+          "duplicate": [Function],
+          "enabled": true,
+          "encode": [Function],
+          "id": 1,
+          "items": [],
+          "name": "second",
+          "type": "group",
+        },
+        ReflexHelper {
+          "apply": [Function],
+          "description": "bar",
+          "duplicate": [Function],
+          "enabled": true,
+          "encode": [Function],
+          "id": 1,
+          "items": [],
+          "name": "first",
+          "type": "group",
+        },
+      ],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Should order installed depency packages after update to have dependency before both dependent packages 1`] = `
+[MockFunction] {
+  "calls": [
+    [
+      [
+        ReflexHelper {
+          "apply": [Function],
+          "description": "bar",
+          "duplicate": [Function],
+          "enabled": true,
+          "encode": [Function],
+          "id": 1,
+          "items": [],
+          "name": "first",
+          "type": "group",
+        },
+        ReflexHelper {
+          "apply": [Function],
+          "description": "baz",
+          "duplicate": [Function],
+          "enabled": true,
+          "encode": [Function],
+          "id": 1,
+          "items": [],
+          "name": "second",
+          "type": "group",
+        },
+        ReflexHelper {
+          "apply": [Function],
+          "description": "bamboozle",
+          "duplicate": [Function],
+          "enabled": true,
+          "encode": [Function],
+          "id": 1,
+          "items": [],
+          "name": "third",
+          "type": "group",
+        },
+      ],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Should order installed depency packages after update to have dependency before dependent package 1`] = `
+[MockFunction] {
+  "calls": [
+    [
+      [
+        ReflexHelper {
+          "apply": [Function],
+          "description": "bar",
+          "duplicate": [Function],
+          "enabled": true,
+          "encode": [Function],
+          "id": 1,
+          "items": [],
+          "name": "first",
+          "type": "group",
+        },
+        ReflexHelper {
+          "apply": [Function],
+          "description": "baz",
+          "duplicate": [Function],
+          "enabled": true,
+          "encode": [Function],
+          "id": 1,
+          "items": [],
+          "name": "second",
+          "type": "group",
+        },
+      ],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
 exports[`Should parse response correctly 1`] = `
 [
   {

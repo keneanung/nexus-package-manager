@@ -1,11 +1,19 @@
 import { PackageManager } from '../index';
-import { installNexusPackage, isNexusPackageInstalled, uninstallNexusPackage } from '../lib/nexusPackageInterface';
+import {
+  installNexusPackage,
+  isNexusPackageInstalled,
+  uninstallNexusPackage,
+  getPackageList,
+  setPackageList,
+} from '../lib/nexusPackageInterface';
 import { DefaultBodyType, Path, rest } from 'msw';
 import { setupServer } from 'msw/node';
 jest.mock('../lib/nexusPackageInterface');
 const installNexusPackageMock = jest.mocked(installNexusPackage);
 const isNexusPackageInstalledMock = jest.mocked(isNexusPackageInstalled);
 const uninstallNexusPackageMock = jest.mocked(uninstallNexusPackage);
+const getPackageListMock = jest.mocked(getPackageList);
+const setPackageListMock = jest.mocked(setPackageList);
 
 const server = setupServer();
 
@@ -16,6 +24,10 @@ beforeAll(() =>
   }),
 );
 
+beforeEach(() => {
+  getPackageListMock.mockReturnValue([]);
+});
+
 // Reset handlers so that each test could alter them
 // without affecting other, unrelated tests.
 afterEach(() => {
@@ -23,6 +35,8 @@ afterEach(() => {
   installNexusPackageMock.mockReset();
   isNexusPackageInstalledMock.mockReset();
   uninstallNexusPackageMock.mockReset();
+  setPackageListMock.mockReset();
+  getPackageListMock.mockReset();
 });
 
 // Don't forget to clean up afterwards.
@@ -248,7 +262,7 @@ test('Should not throw on error in callback function for update.', async () => {
   await sut.updateAsync();
 
   expect(callback).toHaveBeenCalledTimes(1);
-  expect(console.error).toHaveBeenCalledTimes(1);
+  expect(console.error).toMatchSnapshot();
 });
 
 test('Should not throw on error in callback function for install.', async () => {
@@ -275,7 +289,7 @@ test('Should not throw on error in callback function for install.', async () => 
   await sut.installAsync('second');
 
   expect(callback).toHaveBeenCalledTimes(1);
-  expect(console.error).toHaveBeenCalledTimes(1);
+  expect(console.error).toMatchSnapshot();
 });
 
 test('Should install depency packages with original package', async () => {
@@ -343,6 +357,145 @@ test('Should use installed depency packages with original package', async () => 
   expect(installNexusPackageMock).toMatchSnapshot();
 });
 
+test('Should order installed depency packages after update to have dependency before dependent package', async () => {
+  setupRepositoryResponses([
+    {
+      name: 'first package',
+      packageName: 'first',
+      description: 'This is the first package',
+      url: 'https://keneanung.github.io/nexus-event-bus/foo.nxs',
+      dependencies: [],
+    },
+    {
+      name: 'second package',
+      packageName: 'second',
+      description: 'This is the second package',
+      url: 'https://keneanung.github.io/nexus-event-bus/bar.nxs',
+      dependencies: ['first'],
+    },
+  ]);
+  setupPackageResponse('https://keneanung.github.io/nexus-event-bus/foo.nxs', { name: 'first', description: 'bar' });
+  isNexusPackageInstalledMock.mockReturnValue(true);
+  getPackageListMock.mockReturnValue([new ReflexHelper('second', 'baz'), new ReflexHelper('first', 'bar')]);
+  const sut = new PackageManager();
+  await sut.updateAsync();
+
+  await sut.updatePackageAsync('first');
+
+  expect(setPackageListMock).toMatchSnapshot();
+});
+
+test('Should order installed depency packages after update and expect unkown package', async () => {
+  setupRepositoryResponses([
+    {
+      name: 'first package',
+      packageName: 'first',
+      description: 'This is the first package',
+      url: 'https://keneanung.github.io/nexus-event-bus/foo.nxs',
+      dependencies: [],
+    },
+  ]);
+  setupPackageResponse('https://keneanung.github.io/nexus-event-bus/foo.nxs', { name: 'first', description: 'bar' });
+  isNexusPackageInstalledMock.mockReturnValue(true);
+  getPackageListMock.mockReturnValue([new ReflexHelper('second', 'baz'), new ReflexHelper('first', 'bar')]);
+  const sut = new PackageManager();
+  await sut.updateAsync();
+
+  await sut.updatePackageAsync('first');
+
+  expect(setPackageListMock).toMatchSnapshot();
+});
+
+test('Should order installed depency packages after update to have dependency before both dependent packages', async () => {
+  setupRepositoryResponses([
+    {
+      name: 'first package',
+      packageName: 'first',
+      description: 'This is the first package',
+      url: 'https://keneanung.github.io/nexus-event-bus/foo.nxs',
+      dependencies: [],
+    },
+    {
+      name: 'second package',
+      packageName: 'second',
+      description: 'This is the second package',
+      url: 'https://keneanung.github.io/nexus-event-bus/bar.nxs',
+      dependencies: ['first'],
+    },
+    {
+      name: 'third package',
+      packageName: 'third',
+      description: 'This is the third package',
+      url: 'https://keneanung.github.io/nexus-event-bus/baz.nxs',
+      dependencies: ['first'],
+    },
+  ]);
+  setupPackageResponse('https://keneanung.github.io/nexus-event-bus/foo.nxs', { name: 'first', description: 'bar' });
+  isNexusPackageInstalledMock.mockReturnValue(true);
+  getPackageListMock.mockReturnValue([
+    new ReflexHelper('second', 'baz'),
+    new ReflexHelper('third', 'bamboozle'),
+    new ReflexHelper('first', 'bar'),
+  ]);
+  const sut = new PackageManager();
+  await sut.updateAsync();
+
+  await sut.updatePackageAsync('first');
+
+  expect(setPackageListMock).toMatchSnapshot();
+});
+
+test('Should log an exception about circular dependencies on updating order', async () => {
+  console.error = jest.fn();
+  setupRepositoryResponses([
+    {
+      name: 'first package',
+      packageName: 'first',
+      description: 'This is the first package',
+      url: 'https://keneanung.github.io/nexus-event-bus/foo.nxs',
+      dependencies: ['second'],
+    },
+    {
+      name: 'second package',
+      packageName: 'second',
+      description: 'This is the second package',
+      url: 'https://keneanung.github.io/nexus-event-bus/bar.nxs',
+      dependencies: ['first'],
+    },
+  ]);
+  setupPackageResponse('https://keneanung.github.io/nexus-event-bus/foo.nxs', { name: 'first', description: 'bar' });
+  isNexusPackageInstalledMock.mockReturnValue(true);
+  getPackageListMock.mockReturnValue([new ReflexHelper('second', 'baz'), new ReflexHelper('first', 'bar')]);
+  const sut = new PackageManager();
+  await sut.updateAsync();
+
+  await sut.updatePackageAsync('first');
+
+  expect(console.error).toMatchSnapshot();
+});
+
+test('Should log an exception about unknown dependencies on updating order', async () => {
+  console.error = jest.fn();
+  setupRepositoryResponses([
+    {
+      name: 'first package',
+      packageName: 'first',
+      description: 'This is the first package',
+      url: 'https://keneanung.github.io/nexus-event-bus/foo.nxs',
+      dependencies: ['third'],
+    },
+  ]);
+  setupPackageResponse('https://keneanung.github.io/nexus-event-bus/foo.nxs', { name: 'first', description: 'bar' });
+  isNexusPackageInstalledMock.mockReturnValue(true);
+  getPackageListMock.mockReturnValue([new ReflexHelper('first', 'bar')]);
+  const sut = new PackageManager();
+  await sut.updateAsync();
+
+  await sut.updatePackageAsync('first');
+
+  expect(console.error).toMatchSnapshot();
+});
+
 function setupRepositoryResponses(...responses: DefaultBodyType[]) {
   for (const response of responses.reverse()) {
     server.use(
@@ -359,4 +512,31 @@ function setupPackageResponse(url: Path, response: DefaultBodyType) {
       return result.once(context.json(response));
     }),
   );
+}
+
+class ReflexHelper {
+  name: string;
+  description: string;
+  id = 1;
+  enabled = true;
+  type: 'group' = 'group' as const;
+  items = [];
+
+  constructor(name: string, description: string) {
+    this.name = name;
+    this.description = description;
+  }
+
+  duplicate = () => {
+    return this;
+  };
+
+  encode = () => {
+    return {};
+  };
+
+  apply = () => {
+    // keep eslint happy
+    true;
+  };
 }
