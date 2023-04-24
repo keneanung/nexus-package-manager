@@ -138,7 +138,7 @@ exports[`Should not throw on error in callback function for update. 1`] = `
 }
 `;
 
-exports[`Should order installed depency packages after update and expect unkown package 1`] = `
+exports[`Should order installed depency packages after update and accept unkown package 1`] = `
 [MockFunction] {
   "calls": [
     [

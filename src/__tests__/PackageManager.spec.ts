@@ -385,7 +385,7 @@ test('Should order installed depency packages after update to have dependency be
   expect(setPackageListMock).toMatchSnapshot();
 });
 
-test('Should order installed depency packages after update and expect unkown package', async () => {
+test('Should order installed depency packages after update and accept unkown package', async () => {
   setupRepositoryResponses([
     {
       name: 'first package',
