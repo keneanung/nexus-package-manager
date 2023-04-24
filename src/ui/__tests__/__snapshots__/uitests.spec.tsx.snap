@@ -550,6 +550,7 @@ exports[`Should switch to details view of package after clicking the button 1`] 
   <p>
     <a
       href="https://mypkg.com"
+      rel="noopener noreferrer"
       target="_blank"
     >
       https://mypkg.com
