@@ -200,7 +200,7 @@ function PackageDetailView({
         <>
           <h2>Website for more information</h2>
           <p>
-            <a href={packageDetails.website} target="_blank">
+            <a href={packageDetails.website} target="_blank" rel="noopener noreferrer">
               {packageDetails.website}
             </a>
           </p>
