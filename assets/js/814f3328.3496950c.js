@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[535],{5641:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"v0.1.0: MVP","permalink":"/nexus-package-manager/blog/2022_10_23_mvp"}]}')}}]);
