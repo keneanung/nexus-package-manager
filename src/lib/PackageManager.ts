@@ -2,10 +2,10 @@ import {
   getPackageList,
   installNexusPackage,
   isNexusPackageInstalled,
-  setPackageList,
+  setPackageOrder,
   uninstallNexusPackage,
 } from './nexusPackageInterface';
-import { PackageEntry, RepositoryData } from './RepositoryData';
+import { RepositoryData } from './RepositoryData';
 import fetch from 'cross-fetch';
 
 export class PackageManager implements IPackageManager {
@@ -123,8 +123,7 @@ export class PackageManager implements IPackageManager {
     for (const pkg of packages) {
       createOrder(pkg);
     }
-
-    setPackageList(newOrder);
+    setPackageOrder(newOrder);
   };
 }
 

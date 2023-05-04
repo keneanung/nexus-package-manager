@@ -4,7 +4,7 @@ import {
   isNexusPackageInstalled,
   uninstallNexusPackage,
   getPackageList,
-  setPackageList,
+  setPackageOrder,
 } from '../lib/nexusPackageInterface';
 import { DefaultBodyType, Path, rest } from 'msw';
 import { setupServer } from 'msw/node';
@@ -13,7 +13,7 @@ const installNexusPackageMock = jest.mocked(installNexusPackage);
 const isNexusPackageInstalledMock = jest.mocked(isNexusPackageInstalled);
 const uninstallNexusPackageMock = jest.mocked(uninstallNexusPackage);
 const getPackageListMock = jest.mocked(getPackageList);
-const setPackageListMock = jest.mocked(setPackageList);
+const setPackageOrderMock = jest.mocked(setPackageOrder);
 
 const server = setupServer();
 
@@ -35,7 +35,7 @@ afterEach(() => {
   installNexusPackageMock.mockReset();
   isNexusPackageInstalledMock.mockReset();
   uninstallNexusPackageMock.mockReset();
-  setPackageListMock.mockReset();
+  setPackageOrderMock.mockReset();
   getPackageListMock.mockReset();
 });
 
@@ -382,7 +382,7 @@ test('Should order installed depency packages after update to have dependency be
 
   await sut.updatePackageAsync('first');
 
-  expect(setPackageListMock).toMatchSnapshot();
+  expect(setPackageOrderMock).toMatchSnapshot();
 });
 
 test('Should order installed depency packages after update and accept unkown package', async () => {
@@ -403,7 +403,7 @@ test('Should order installed depency packages after update and accept unkown pac
 
   await sut.updatePackageAsync('first');
 
-  expect(setPackageListMock).toMatchSnapshot();
+  expect(setPackageOrderMock).toMatchSnapshot();
 });
 
 test('Should order installed depency packages after update to have dependency before both dependent packages', async () => {
@@ -442,7 +442,7 @@ test('Should order installed depency packages after update to have dependency be
 
   await sut.updatePackageAsync('first');
 
-  expect(setPackageListMock).toMatchSnapshot();
+  expect(setPackageOrderMock).toMatchSnapshot();
 });
 
 test('Should log an exception about circular dependencies on updating order', async () => {

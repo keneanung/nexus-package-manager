@@ -18,6 +18,10 @@ export const getPackageList = (): nexusclient.ReflexPackage[] => {
   return nexusclient.reflexes().get_package_list();
 };
 
-export const setPackageList = (packageList: nexusclient.ReflexPackage[]) => {
-  nexusclient.packages().apply(packageList);
+export const setPackageOrder = (packageList: nexusclient.ReflexPackage[]) => {
+  for (let i = 0; i < packageList.length; i++) {
+    const packageList = getPackageList();
+    const oldIndex = packageList.findIndex((p: nexusclient.ReflexPackage) => p.name === packageList[i].name);
+    nexusclient.packages().move(oldIndex, i);
+  }
 };
